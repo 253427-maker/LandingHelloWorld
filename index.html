@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelloWorld! | Bitácora de aprendizaje de Karen Lizeth</title>
+  <meta name="description" content="Bitácora de aprendizaje de una estudiante de Ingeniería en Tecnologías de la Información e Innovación Digital (IT2ID).">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#inicio" class="brand">HelloWorld!</a>
+      <ul class="nav-links">
+        <li><a href="#bitacora">Bitácora</a></li>
+        <li><a href="#materias">Materias</a></li>
+        <li><a href="#descubrimientos">Descubrimientos</a></li>
+        <li><a href="#herramientas">Herramientas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============ PRESENTACION ============ -->
+  <header id="inicio" class="hero">
+    <div class="hero-inner">
+
+      <div class="hero-content">
+        <h1>HelloWorld!</h1>
+        <p class="tagline">Bitácora de aprendizaje de una estudiante de IT2ID</p>
+        <p class="intro">
+          Aquí documento lo que aprendo cada día: las herramientas que usamos en clase,
+          los errores que me tocó corregir y los pequeños descubrimientos de cada semana.
+          Es un diario abierto, escrito mientras construyo.
+        </p>
+        <p class="intro">
+          Mi parte favorita del software es el diseño: pensar, decorar, planificar y organizar
+          apps y páginas web para que se vean claras y se sientan fáciles de usar.
+        </p>
+        <div class="hero-actions">
+          <a href="#bitacora" class="btn btn-primary">Leer la bitácora</a>
+          <a href="#materias" class="btn btn-secondary">Ver las materias</a>
+        </div>
+      </div>
+
+      <div class="profile">
+        <!-- Para poner tu foto: guarda tu imagen en la carpeta Fotos con el nombre karen.jpg -->
+        <div class="photo-frame">
+          <img src="Fotos/karen.jpg" alt="Retrato de Karen Lizeth"
+               onerror="this.parentElement.classList.add('is-empty'); this.remove();">
+        </div>
+        <div class="profile-name">
+          <strong>Karen Lizeth</strong>
+          <span>Diseño de interfaces (UI/UX), prototipado y arquitectura de información</span>
+          <span>Estudiante de Ingeniería en Tecnologías de la Información e Innovación Digital, cursando el cuarto cuatrimestre en la Universidad Politécnica de Chiapas.</span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ============ BITACORA ============ -->
+  <section id="bitacora" class="section">
+    <div class="container">
+      <h2 class="section-title">Bitácora</h2>
+      <p class="section-sub">Entradas escritas al ritmo de las clases. Cada una cuenta qué hice, qué aprendí y, cuando aplica, el código que lo respalda.</p>
+
+      <div class="filters" role="group" aria-label="Filtrar entradas por materia">
+        <button class="filter-btn active" data-filter="all">Todas</button>
+        <button class="filter-btn" data-filter="web">Aplicaciones web</button>
+        <button class="filter-btn" data-filter="movil">Aplicaciones móviles</button>
+        <button class="filter-btn" data-filter="analisis">Análisis y diseño</button>
+        <button class="filter-btn" data-filter="datos">Estructura de datos</button>
+      </div>
+
+      <div class="entries">
+
+        <!-- ENTRADA 1 -->
+        <article class="entry" data-category="web">
+          <div class="entry-date">5 oct<small>Lunes, 2026</small></div>
+          <div>
+            <span class="entry-tag">Aplicaciones web</span>
+            <h3>Hoy diseñé una card de producto y este es el HTML</h3>
+            <p>Una tarjeta sencilla con imagen, nombre, descripción, precio y botón. Cuento cómo la estructuré y por qué usé etiquetas semánticas.</p>
+          </div>
+          <button class="entry-link" type="button">Leer entrada</button>
+
+          <div class="entry-full">
+            <p>La consigna era maquetar un componente reutilizable. Elegí una card de producto porque reúne casi todo lo básico: imagen, jerarquía de texto, una acción y espaciado consistente.</p>
+            <h4>El HTML</h4>
+<pre><code>&lt;article class="card"&gt;
+  &lt;img src="producto.jpg" alt="Taza de cerámica color arena" class="card__img"&gt;
+  &lt;div class="card__body"&gt;
+    &lt;h3 class="card__title"&gt;Taza de cerámica&lt;/h3&gt;
+    &lt;p class="card__text"&gt;Hecha a mano, 300 ml.&lt;/p&gt;
+    &lt;div class="card__footer"&gt;
+      &lt;span class="card__price"&gt;$180&lt;/span&gt;
+      &lt;button class="card__btn"&gt;Agregar&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+            <h4>El CSS que sostiene el diseño</h4>
+<pre><code>.card { max-width: 280px; border-radius: 16px; overflow: hidden; background: #f6f3e8; }
+.card__img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.card__body { display: grid; gap: 8px; padding: 16px; }
+.card__footer { display: flex; justify-content: space-between; align-items: center; }</code></pre>
+            <h4>Lo que me llevo</h4>
+            <ul>
+              <li>Usar <code>article</code> hace que la card tenga sentido por sí sola, incluso fuera de una lista.</li>
+              <li><code>aspect-ratio</code> reserva el espacio de la imagen y evita saltos al cargar.</li>
+              <li><code>gap</code> en lugar de márgenes sueltos mantiene el ritmo vertical parejo.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ENTRADA 2 -->
+        <article class="entry" data-category="web">
+          <div class="entry-date">2 oct<small>Viernes, 2026</small></div>
+          <div>
+            <span class="entry-tag">Aplicaciones web</span>
+            <h3>3 errores comunes de espaciado al maquetar y cómo solucionarlos</h3>
+            <p>Márgenes que se pegan, medidas al azar y paddings que no respiran en móvil. Tres hábitos que corregí esta semana.</p>
+          </div>
+          <button class="entry-link" type="button">Leer entrada</button>
+
+          <div class="entry-full">
+            <p>Mientras revisaba mis propias maquetas encontré tres patrones que hacían que todo se viera un poco desordenado sin saber bien por qué.</p>
+            <h4>1. Usar márgenes para separar todo</h4>
+            <p>Terminas con espacio extra debajo del último elemento y márgenes que se fusionan de forma inesperada. Solución: dejar que el contenedor reparta el espacio con <code>gap</code>.</p>
+<pre><code>.stack { display: grid; gap: 16px; }</code></pre>
+            <h4>2. Medidas arbitrarias</h4>
+            <p>13px aquí, 17px allá. Solución: definir una escala de espaciado y usarla siempre.</p>
+<pre><code>:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+}</code></pre>
+            <h4>3. Mismo espaciado en pantalla grande y en móvil</h4>
+            <p>Un padding de 80px se ve elegante en escritorio y se come la pantalla en un teléfono. Solución: una medida fluida con <code>clamp()</code>.</p>
+<pre><code>.section { padding-block: clamp(32px, 6vw, 80px); }</code></pre>
+          </div>
+        </article>
+
+        <!-- ENTRADA 3 -->
+        <article class="entry" data-category="datos">
+          <div class="entry-date">30 sep<small>Miércoles, 2026</small></div>
+          <div>
+            <span class="entry-tag">Estructura de datos</span>
+            <h3>Pilas y colas: una imagen mental para no confundirlas</h3>
+            <p>Una pila es una torre de platos; una cola es la fila de la tienda. Con esa imagen, el orden de salida deja de ser un misterio.</p>
+          </div>
+          <button class="entry-link" type="button">Leer entrada</button>
+
+          <div class="entry-full">
+            <p>Las dos estructuras guardan elementos en orden, pero se diferencian en cuál sale primero.</p>
+            <ul>
+              <li><strong>Pila (stack):</strong> el último en entrar es el primero en salir, LIFO. Como una torre de platos: tomas el de arriba.</li>
+              <li><strong>Cola (queue):</strong> el primero en entrar es el primero en salir, FIFO. Como la fila de la tienda.</li>
+            </ul>
+            <h4>Probándolo con un arreglo en JavaScript</h4>
+<pre><code>const pila = [];
+pila.push("a"); pila.push("b"); pila.push("c");
+pila.pop();    // "c"  (el último que entró)
+
+const cola = [];
+cola.push("a"); cola.push("b"); cola.push("c");
+cola.shift();  // "a"  (el primero que entró)</code></pre>
+            <p>Nota para mí: en listas muy grandes, quitar elementos del inicio con <code>shift()</code> puede ser costoso. Más adelante en la materia veremos cómo implementar una cola de forma más eficiente.</p>
+          </div>
+        </article>
+
+        <!-- ENTRADA 4 -->
+        <article class="entry" data-category="analisis">
+          <div class="entry-date">28 sep<small>Lunes, 2026</small></div>
+          <div>
+            <span class="entry-tag">Análisis y diseño de software</span>
+            <h3>De una idea a historias de usuario</h3>
+            <p>Convertí la idea de esta bitácora en historias de usuario con criterios de aceptación. Escribir qué debe poder hacer alguien ordena todo lo demás.</p>
+          </div>
+          <button class="entry-link" type="button">Leer entrada</button>
+
+          <div class="entry-full">
+            <p>Una historia de usuario describe una necesidad desde la perspectiva de quien usa el producto. La fórmula que usamos en clase es:</p>
+            <p><em>Como [rol], quiero [acción] para [beneficio].</em></p>
+            <h4>Ejemplo con esta página</h4>
+            <p><strong>Historia:</strong> Como visitante, quiero filtrar las entradas por materia para encontrar rápido lo que busco.</p>
+            <p><strong>Criterios de aceptación:</strong></p>
+            <ul>
+              <li>Existe un filtro por cada materia y una opción para ver todas.</li>
+              <li>Al elegir una materia, solo se muestran sus entradas.</li>
+              <li>El filtro activo se distingue visualmente de los demás.</li>
+            </ul>
+            <p>Lo que más me gustó: los criterios de aceptación funcionan como una lista para saber cuándo algo está terminado.</p>
+          </div>
+        </article>
+
+        <!-- ENTRADA 5 -->
+        <article class="entry" data-category="movil">
+          <div class="entry-date">25 sep<small>Viernes, 2026</small></div>
+          <div>
+            <span class="entry-tag">Desarrollo de aplicaciones móviles</span>
+            <h3>Pantallas pensadas para el pulgar</h3>
+            <p>Diseñar para móvil no es encoger una web. Cambia el tamaño de los botones, la distancia entre ellos y dónde ponemos las acciones principales.</p>
+          </div>
+          <button class="entry-link" type="button">Leer entrada</button>
+
+          <div class="entry-full">
+            <p>Al dibujar mis primeras pantallas me di cuenta de que un botón perfecto con el cursor puede ser imposible de tocar con el dedo.</p>
+            <ul>
+              <li>Las guías de diseño recomiendan áreas táctiles de al menos 44 puntos en iOS y 48 dp en Android.</li>
+              <li>Las acciones principales se alcanzan mejor en la parte baja de la pantalla, donde llega el pulgar.</li>
+              <li>Dejar espacio entre elementos táctiles reduce los toques equivocados.</li>
+            </ul>
+            <p>Para la próxima entrada quiero documentar cómo organizo la navegación entre pantallas antes de escribir código.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MATERIAS ============ -->
+  <section id="materias" class="section alt-bg">
+    <div class="container">
+      <h2 class="section-title">Materias</h2>
+      <p class="section-sub">Las cuatro áreas que sostienen este cuatrimestre, con el nombre profesional de cada disciplina en el mundo del software.</p>
+
+      <div class="subjects-grid">
+
+        <article class="subject">
+          <h3>Desarrollo de aplicaciones móviles</h3>
+          <div class="pro-name">Mobile Application Development</div>
+          <p>Diseño de interfaces táctiles, flujo de navegación entre pantallas y construcción de apps pensadas para el uso con una sola mano.</p>
+          <div class="tools"><span>Herramientas:</span> Figma, emulador móvil, Visual Studio Code</div>
+          <button class="subject-link" type="button" data-filter="movil">Ver entradas</button>
+        </article>
+
+        <article class="subject">
+          <h3>Análisis y diseño de software</h3>
+          <div class="pro-name">Software Analysis &amp; Design</div>
+          <p>Levantamiento de requisitos, historias de usuario, diagramas UML y modelado: decidir qué se construye y cómo se organiza antes de programar.</p>
+          <div class="tools"><span>Herramientas:</span> UML, diagrams.net, historias de usuario</div>
+          <button class="subject-link" type="button" data-filter="analisis">Ver entradas</button>
+        </article>
+
+        <article class="subject">
+          <h3>Aplicaciones web</h3>
+          <div class="pro-name">Web Application Development</div>
+          <p>HTML semántico, CSS, JavaScript, diseño responsivo y accesibilidad para crear interfaces limpias que funcionen en cualquier pantalla.</p>
+          <div class="tools"><span>Herramientas:</span> HTML, CSS, JavaScript, DevTools, Git</div>
+          <button class="subject-link" type="button" data-filter="web">Ver entradas</button>
+        </article>
+
+        <article class="subject">
+          <h3>Estructura de datos</h3>
+          <div class="pro-name">Data Structures</div>
+          <p>Listas, pilas, colas, árboles y análisis de eficiencia: elegir la forma correcta de guardar la información según lo que el programa necesita hacer con ella.</p>
+          <div class="tools"><span>Herramientas:</span> Pseudocódigo, diagramas, Visual Studio Code</div>
+          <button class="subject-link" type="button" data-filter="datos">Ver entradas</button>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DESCUBRIMIENTOS ============ -->
+  <section id="descubrimientos" class="section">
+    <div class="container">
+      <h2 class="section-title">Descubrimientos de la semana</h2>
+      <p class="section-sub">Cosas pequeñas que no sabía el lunes y que ya uso el viernes.</p>
+
+      <div class="finds-grid">
+        <div class="find">
+          <h3>Emmet en Visual Studio Code</h3>
+          <p>Escribir <code>!</code> y pulsar Tab genera la estructura base de un HTML completo. También sirve para cosas como <code>ul&gt;li*4</code>, que crea una lista de cuatro elementos.</p>
+        </div>
+        <div class="find">
+          <h3>Seleccionar la siguiente coincidencia</h3>
+          <p>Con <code>Ctrl + D</code> se selecciona la siguiente aparición de una palabra, y se pueden editar todas a la vez. Ideal para renombrar una clase en varios lugares.</p>
+        </div>
+        <div class="find">
+          <h3>El diagrama antes del código</h3>
+          <p>Dibujar un caso de uso o un flujo de pantallas me mostró huecos en la idea que habría descubierto mucho más tarde programando.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HERRAMIENTAS ============ -->
+  <section id="herramientas" class="section alt-bg">
+    <div class="container">
+      <h2 class="section-title">Herramientas de clase</h2>
+      <p class="section-sub">Lo que abro casi todos los días, y para qué lo uso.</p>
+
+      <div class="tools-list">
+        <div class="tool-row"><strong>Visual Studio Code</strong><span>Editor de código</span></div>
+        <div class="tool-row"><strong>Git y GitHub</strong><span>Control de versiones</span></div>
+        <div class="tool-row"><strong>Figma</strong><span>Prototipos y diseño de interfaces</span></div>
+        <div class="tool-row"><strong>DevTools del navegador</strong><span>Inspeccionar y depurar páginas</span></div>
+        <div class="tool-row"><strong>diagrams.net</strong><span>Diagramas UML y de flujo para Estructura de Datos</span></div>
+        <div class="tool-row"><strong>HTML, Android Studio,CSS y JavaScript</strong><span>Base del desarrollo web</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section id="contacto" class="section">
+    <div class="container">
+      <h2 class="section-title">Contacto</h2>
+      <p class="section-sub">Si quieres compartir un consejo, una duda o simplemente saludar, aquí me encuentras.</p>
+
+      <div class="contact-cards">
+        <!-- Reemplaza estos datos por los tuyos -->
+        <a href="mailto:tu-correo@ejemplo.com" class="contact-card">
+          <h3>Correo electrónico</h3>
+          <p>zejhs@gmail.com</p>
+        </a>
+
+        <a href="https://github.com/tu-usuario" target="_blank" rel="noopener" class="contact-card">
+          <h3>GitHub</h3>
+          <p>253427-fabricante</p>
+        </a>
+
+        <a href="https://www.instagram.com/tu-usuario/" target="_blank" rel="noopener" class="contact-card">
+          <h3>Instagram</h3>
+          <p>@ikarennp</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Karen Lizeth. HelloWorld!, bitácora de aprendizaje IT2ID.</p>
+  </footer>
+
+  <!-- Ventana de lectura de entradas -->
+  <div id="entryModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button class="close-modal" type="button" aria-label="Cerrar">&times;</button>
+      <div class="modal-body">
+        <span class="entry-tag" id="modalTag"></span>
+        <h3 id="modalTitle"></h3>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
